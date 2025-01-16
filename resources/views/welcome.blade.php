@@ -1222,6 +1222,14 @@
             class="relative min-h-screen flex flex-col items-center justify-center selection:bg-[#FF2D20] selection:text-white">
             <div class="relative w-full max-w-2xl px-6 lg:max-w-7xl">
                 <header class="grid grid-cols-2 items-center gap-2 py-10 lg:grid-cols-3">
+                    <nav class="-mx-3 flex flex-1 justify-start">
+
+                        <div class="container mx-auto p-4 px-20">
+                            <button id="theme-toggle" class="btn btn-primary">Dark Mode</button>
+
+                        </div>
+
+                    </nav>
                     <div class="flex lg:justify-center lg:col-start-2">
                         <img src="https://khu.ac.ir/templates/tmpl_modern01/images/main_logo.png"
                             class="h-12 w-auto text-white lg:h-16 lg:text-[#FF2D20]" viewBox="0 0 62 65" fill="none">
@@ -1246,11 +1254,15 @@
                                     </a>
                                 @endif
                             @endauth
+
                         </nav>
+
+
                     @endif
                 </header>
 
                 <main class="mt-6">
+
                     <div class="carousel carousel-end rounded-box">
                         <div class="carousel-item px-2 ">
                             <div class="card bg-gray-100  w-96">
@@ -1302,19 +1314,19 @@
                         </div>
                         <div class="carousel-item px-2">
                             <img src="https://img.daisyui.com/images/stock/photo-1550258987-190a2d41a8ba.webp"
-                                alt="Pizza" />
+                                alt="Pizza" style="border-radius: 4%;" />
                         </div>
                         <div class="carousel-item px-2">
                             <img src="https://img.daisyui.com/images/stock/photo-1494253109108-2e30c049369b.webp"
-                                alt="Pizza" />
+                                alt="Pizza" style="border-radius: 4%;" />
                         </div>
                         <div class="carousel-item px-2">
                             <img src="https://img.daisyui.com/images/stock/photo-1559181567-c3190ca9959b.webp"
-                                alt="Pizza" />
+                                alt="Pizza" style="border-radius: 4%;" />
                         </div>
                         <div class="carousel-item px-2">
                             <img src="https://img.daisyui.com/images/stock/photo-1601004890684-d8cbf643f5f2.webp"
-                                alt="Pizza" />
+                                alt="Pizza" style="border-radius: 4%;" />
                         </div>
                     </div>
                 </main>
@@ -1378,6 +1390,21 @@
             <p>Copyright © - All right reserved</p>
         </aside>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const themeToggle = document.getElementById('theme-toggle');
+
+            themeToggle.addEventListener('click', function () {
+                const currentTheme = document.documentElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                document.documentElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+            });
+
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        });
+    </script>
 </body>
 
 </html>
