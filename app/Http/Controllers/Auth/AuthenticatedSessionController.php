@@ -11,14 +11,41 @@ use Illuminate\View\View;
 
 class AuthenticatedSessionController extends Controller
 {
+    public function create(Request $request): View
+    {
+        $type = $request->input('type', 'student'); // مقدار پیش‌فرض 'student'
+        
+        if ($type === 'teacher') {
+            return view('auth.login_teacher');
+        }
+        
+        return view('auth.login_student');
+    }
+
     /**
      * Display the login view.
      */
-    public function create(): View
-    {
-        return view('auth.login');
-    }
-
+    
+    //  public function create(): View
+    //  {
+    //      return view('auth.login_student');
+    //  }
+ 
+     /**
+      * Display the student login view.
+      */
+    //  public function createStudent(): View
+    //  {
+    //      return view('auth.login_student');
+    //  }
+ 
+     /**
+      * Display the teacher login view.
+      */
+    //  public function create(): View
+    //  {
+    //      return view('auth.login_teacher');
+    //  }
     /**
      * Handle an incoming authentication request.
      */

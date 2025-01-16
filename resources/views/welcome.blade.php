@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Laravel</title>
+    <title>سامانه گلستان خوارزمی</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -1242,17 +1242,23 @@
                                     Dashboard
                                 </a>
                             @else
-                                <a href="{{ route('login') }}"
+                                <a href="{{ route('login', ['type' => 'student']) }}"
                                     class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
-                                    Log in
+                                    ورود دانشجو
                                 </a>
 
-                                @if (Route::has('register'))
-                                    <a href="{{ route('register') }}"
-                                        class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
-                                        Register
-                                    </a>
-                                @endif
+                                <!-- دکمه ورود معلم -->
+                                <a href="{{ route('login', ['type' => 'teacher']) }}"
+                                    class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
+                                    ورود معلم
+                                </a>
+
+                                <!-- @if (Route::has('register'))
+                                            <a href="{{ route('register') }}"
+                                                class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
+                                                Register
+                                            </a>
+                                        @endif -->
                             @endauth
 
                         </nav>
@@ -1338,45 +1344,42 @@
 
     <footer class="footer bg-neutral text-neutral-content grid-rows-2 p-10">
         <nav>
-            <h6 class="footer-title">Services</h6>
-            <a class="link link-hover">Branding</a>
-            <a class="link link-hover">Design</a>
-            <a class="link link-hover">Marketing</a>
-            <a class="link link-hover">Advertisement</a>
+            <h6 class="footer-title">دانشکده هنر و معماری</h6>
+            <a class="link link-hover">چند رسانه ای</a>
+            <a class="link link-hover">معماری</a>
+            <a class="link link-hover">شهر سازی</a>
         </nav>
         <nav>
-            <h6 class="footer-title">Company</h6>
-            <a class="link link-hover">About us</a>
-            <a class="link link-hover">Contact</a>
-            <a class="link link-hover">Jobs</a>
-            <a class="link link-hover">Press kit</a>
+            <h6 class="footer-title">دانشکده مدیریت</h6>
+            <a class="link link-hover">مدیریت بیمه</a>
+            <a class="link link-hover">مدیریت بانک</a>
+            <a class="link link-hover">مدیریت گمرک</a>
+            <a class="link link-hover">مدیریت بازرگانی</a>
         </nav>
         <nav>
-            <h6 class="footer-title">Legal</h6>
-            <a class="link link-hover">Terms of use</a>
-            <a class="link link-hover">Privacy policy</a>
-            <a class="link link-hover">Cookie policy</a>
+            <h6 class="footer-title">دانشکده مالی</h6>
+            <a class="link link-hover">مدیریت مالی</a>
+            <a class="link link-hover">ریاضیات مالی</a>
+            <a class="link link-hover">حسابداری</a>
         </nav>
         <nav>
-            <h6 class="footer-title">Social</h6>
-            <a class="link link-hover">Twitter</a>
-            <a class="link link-hover">Instagram</a>
-            <a class="link link-hover">Facebook</a>
-            <a class="link link-hover">GitHub</a>
+            <h6 class="footer-title">دانشکده هنر و معماری</h6>
+            <a class="link link-hover">چند رسانه ای</a>
+            <a class="link link-hover">معماری</a>
+            <a class="link link-hover">شهر سازی</a>
         </nav>
         <nav>
-            <h6 class="footer-title">Explore</h6>
-            <a class="link link-hover">Features</a>
-            <a class="link link-hover">Enterprise</a>
-            <a class="link link-hover">Security</a>
-            <a class="link link-hover">Pricing</a>
+            <h6 class="footer-title">دانشکده مالی</h6>
+            <a class="link link-hover">مدیریت مالی</a>
+            <a class="link link-hover">ریاضیات مالی</a>
+            <a class="link link-hover">حسابداری</a>
         </nav>
         <nav>
-            <h6 class="footer-title">Apps</h6>
-            <a class="link link-hover">Mac</a>
-            <a class="link link-hover">Windows</a>
-            <a class="link link-hover">iPhone</a>
-            <a class="link link-hover">Android</a>
+            <h6 class="footer-title">دانشکده مدیریت</h6>
+            <a class="link link-hover">مدیریت بیمه</a>
+            <a class="link link-hover">مدیریت بانک</a>
+            <a class="link link-hover">مدیریت گمرک</a>
+            <a class="link link-hover">مدیریت بازرگانی</a>
         </nav>
     </footer>
     <footer class="footer bg-neutral text-neutral-content items-center p-4">
