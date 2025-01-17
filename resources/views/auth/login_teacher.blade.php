@@ -36,7 +36,7 @@
 
                     ثبت نام
                 </a>
-
+ 
             </x-primary-button>
             <x-primary-button class="ms-3">
                 {{ __('ورود') }}

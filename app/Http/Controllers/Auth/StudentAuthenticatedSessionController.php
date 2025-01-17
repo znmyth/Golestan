@@ -1,9 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Auth;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\View\View;
 
 class StudentAuthenticatedSessionController extends Controller
 {
@@ -18,7 +20,7 @@ class StudentAuthenticatedSessionController extends Controller
         
         if (Auth::attempt(['student_id' => $credentials['student_id'], 'password' => $credentials['password']])) {
             // Authentication passed...
-            return redirect()->intended('dashboard');
+            return redirect()->intended('student_dashboard');
         }
 
         return back()->withErrors([

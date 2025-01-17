@@ -20,7 +20,7 @@ class TeacherAuthenticatedSessionController extends Controller
         
         if (Auth::attempt(['national_id' => $credentials['national_id'], 'password' => $credentials['password']])) {
             // Authentication passed...
-            return redirect()->intended('dashboard');
+            return redirect()->intended('teacher_dashboard');
         }
 
         return back()->withErrors([

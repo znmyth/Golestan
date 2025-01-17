@@ -4,7 +4,8 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\LanguageController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthenticatedSessionController;
-use App\Http\Controllers\Auth\TeacherAuthenticatedSessionController;
+use App\Http\Controllers\StudentDashboardController;
+use App\Http\Controllers\TeacherDashboardController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 
 Route::get('/', function () {
@@ -48,6 +49,7 @@ Route::get('/login/teacher', [TeacherAuthenticatedSessionController::class, 'cre
 Route::post('/login/teacher', [TeacherAuthenticatedSessionController::class, 'store'])->name('login.teacher');
 
 
+Route::get('/teacher_dashboard', [TeacherDashboardController::class, 'index'])->name('teacher_dashboard')->middleware('auth');
 
 
 

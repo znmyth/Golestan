@@ -1237,28 +1237,33 @@
                     @if (Route::has('login'))
                         <nav class="-mx-3 flex flex-1 justify-end">
                             @auth
-                                <a href="{{ url('/dashboard') }}"
-                                    class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
-                                    میز کار
-                                </a>
+                                <button class="btn btn-primary">
+                                    <a href="{{ url('/dashboard') }}"
+                                        class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
+                                        میز کار
+                                    </a>
+                                </button>
                             @else
-                                <a href="{{ route('login', ['type' => 'student']) }}"
-                                    class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
-                                    ورود دانشجو
-                                </a>
+                                <!-- دکمه ورود دانشجو -->
+                                <button class="btn btn-primary ms-2">
+                                    <a href="{{ route('login', ['type' => 'student']) }}" class="text-custom">
+                                        ورود دانشجو
+                                    </a>
+                                </button>
 
                                 <!-- دکمه ورود معلم -->
-                                <a href="{{ route('login', ['type' => 'teacher']) }}"
-                                    class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
-                                    ورود کارمند
-                                </a>
+                                <button class="btn btn-primary ms-2">
+                                    <a href="{{ route('login', ['type' => 'teacher']) }}" class="text-custom">
+                                        ورود کارمند
+                                    </a>
+                                </button>
 
                                 <!-- @if (Route::has('register'))
-                                            <a href="{{ route('register') }}"
-                                                class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
-                                                Register
-                                            </a>
-                                        @endif -->
+                                                                            <a href="{{ route('register') }}"
+                                                                                class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
+                                                                                Register
+                                                                            </a>
+                                                                        @endif -->
                             @endauth
 
                         </nav>
@@ -1393,6 +1398,7 @@
             <p>Copyright © - All right reserved</p>
         </aside>
     </footer>
+
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const themeToggle = document.getElementById('theme-toggle');
@@ -1407,8 +1413,8 @@
             const savedTheme = localStorage.getItem('theme') || 'light';
             document.documentElement.setAttribute('data-theme', savedTheme);
         });
-        
     </script>
+
 </body>
 
 </html>

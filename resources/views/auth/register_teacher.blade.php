@@ -46,6 +46,6 @@
                 {{ ('ثبت نام') }}
             </x-primary-button>
         </div>
-    </form>
+    </form> 
 </x-guest-layout>
 
