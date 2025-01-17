@@ -22,48 +22,23 @@ class AuthenticatedSessionController extends Controller
         return view('auth.login_student');
     }
 
-    /**
-     * Display the login view.
-     */
-    
-    //  public function create(): View
-    //  {
-    //      return view('auth.login_student');
-    //  }
- 
-     /**
-      * Display the student login view.
-      */
-    //  public function createStudent(): View
-    //  {
-    //      return view('auth.login_student');
-    //  }
- 
-     /**
-      * Display the teacher login view.
-      */
-    //  public function create(): View
-    //  {
-    //      return view('auth.login_teacher');
-    //  }
-    /**
-     * Handle an incoming authentication request.
-     */
-    public function store(LoginRequest $request): RedirectResponse
+    public function store(Request $request)
     {
-        $request->authenticate();
+        $credentials = $request->only('student_id', 'password');
+        
+        if (Auth::attempt(['student_id' => $credentials['student_id'], 'password' => $credentials['password']])) {
+            // Authentication passed...
+            return redirect()->intended('dashboard');
+        }
 
-        $request->session()->regenerate();
-
-        return redirect()->intended(route('dashboard', absolute: false));
+        return back()->withErrors([
+            'student_id' => 'اطلاعات وارد شده نامعتبر است.',
+        ]);
     }
 
-    /**
-     * Destroy an authenticated session.
-     */
-    public function destroy(Request $request): RedirectResponse
+    public function destroy(Request $request)
     {
-        Auth::guard('web')->logout();
+        Auth::logout();
 
         $request->session()->invalidate();
 

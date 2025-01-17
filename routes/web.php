@@ -3,6 +3,9 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\LanguageController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthenticatedSessionController;
+use App\Http\Controllers\Auth\TeacherAuthenticatedSessionController;
+use App\Http\Controllers\Auth\RegisteredUserController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -25,6 +28,26 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/login', [AuthenticatedSessionController::class, 'create'])->name('login');
 Route::post('/login', [AuthenticatedSessionController::class, 'store'])->name('login');
+
+Route::get('/register', [RegisteredUserController::class, 'create'])->name('register');
+Route::post('/register', [RegisteredUserController::class, 'store'])->name('register');
+
+Route::get('/login/student', [StudentAuthenticatedSessionController::class, 'create'])->name('student.login');
+Route::post('/login/student', [StudentAuthenticatedSessionController::class, 'store'])->name('student.login');
+
+Route::get('/login', [AuthenticatedSessionController::class, 'create'])->name('login');
+Route::post('/login', [AuthenticatedSessionController::class, 'store'])->name('login');
+Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
+
+// مسیر ثبت‌نام معلم
+Route::get('/register/teacher', [RegisteredUserController::class, 'create'])->name('register.teacher');
+Route::post('/register/teacher', [RegisteredUserController::class, 'store'])->name('register.teacher');
+
+// مسیر لاگین معلم
+Route::get('/login/teacher', [TeacherAuthenticatedSessionController::class, 'create'])->name('login.teacher');
+Route::post('/login/teacher', [TeacherAuthenticatedSessionController::class, 'store'])->name('login.teacher');
+
+
 
 
 

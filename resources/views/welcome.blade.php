@@ -1239,7 +1239,7 @@
                             @auth
                                 <a href="{{ url('/dashboard') }}"
                                     class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
-                                    Dashboard
+                                    میز کار
                                 </a>
                             @else
                                 <a href="{{ route('login', ['type' => 'student']) }}"
@@ -1250,7 +1250,7 @@
                                 <!-- دکمه ورود معلم -->
                                 <a href="{{ route('login', ['type' => 'teacher']) }}"
                                     class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
-                                    ورود معلم
+                                    ورود کارمند
                                 </a>
 
                                 <!-- @if (Route::has('register'))
@@ -1407,6 +1407,7 @@
             const savedTheme = localStorage.getItem('theme') || 'light';
             document.documentElement.setAttribute('data-theme', savedTheme);
         });
+        
     </script>
 </body>
 

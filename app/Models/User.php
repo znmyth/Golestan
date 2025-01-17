@@ -21,6 +21,10 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'student_id',
+        'national_id',
+        'educational_level',
+        // سایر فیلدها...
     ];
 
     /**
