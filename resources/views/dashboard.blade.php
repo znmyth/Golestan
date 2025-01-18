@@ -42,12 +42,12 @@
                         @foreach($courses as $index => $course)
                             <tr class="bg-white divide-y divide-gray-200">
                                 <td class="px-6 py-4 whitespace-nowrap text-right">
-                                    <button class="bg-blue-500 hover:bg-blue-700 text-black font-bold py-2 px-4 rounded"
+                                    <button class="bg-gradient-to-r from-green-400 to-blue-500 hover:from-green-500 hover:to-blue-600 text-gray-800 py-2 px-4 rounded-full shadow-lg transform hover:scale-105 transition-transform duration-200 text-sm"
                                         onclick="openObjectionModal('{{ $course }}')">ثبت اعتراض</button>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-right">
                                     <input type="text" value="{{ $grades[$index] }}" readonly
-                                        class="border-none bg-transparent rounded-full text-gray-500">
+                                        class="border-none bg-transparent rounded-full text-gray-500 text-right">
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-right">{{ $course }}</td>
 
